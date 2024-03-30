@@ -1,113 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Task Page | MirrorInfo-Shop-App®️</title>
-    <link rel="stylesheet" href="./CSS/tasks.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body>
-    <nav id="nav">
-      <img
-        src="https://www.mirrorinfo.in/assets/img/about/mirror-logo.png"
-        alt="mirror-logo"
-      />
-      <h1>
-        MirrorInfo-Shop-App®️<br />
-        <p>Task Dashboard</p>
-      </h1>
-      <a id="login" href="login.html">Jivak</a>
-    </nav>
-    <div id="menuu">
-      <div class="menu">
-        <p id="dash">Dashboard</p>
-        <p id="add">Add a Task</p>
-        <p id="update">Update a Task</p>
-        <p id="dlt">Delete a Task</p>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Page | MirrorInfo-Shop-App®️</title>
+  <link rel="stylesheet" href="./CSS/tasks.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <nav id="nav">
+    <img src="https://www.mirrorinfo.in/assets/img/about/mirror-logo.png" alt="mirror-logo" />
+    <h1>
+      MirrorInfo-Shop-App®️<br />
+      <p>Task Dashboard</p>
+    </h1>
+    <a id="login" href="login.html">Jivak</a>
+  </nav>
+  <div id="menuu">
+    <div class="menu">
+      <p id="dash">Dashboard</p>
+      <p id="add">Add a Task</p>
+      <p id="update">Update a Task</p>
+      <p id="dlt">Delete a Task</p>
     </div>
+  </div>
 
-    <div style="display: block" id="dashboard">
-      <div id="info-products">
-        <p>Total active Task -</p>
-        <p id="total"></p>
-      </div>
-      <div id="container"></div>
+  <div style="display: block" id="dashboard">
+    <div id="info-products">
+      <p>Total active Task -</p>
+      <p id="total"></p>
     </div>
+    <div id="container"></div>
+  </div>
 
-    <div style="display: none" id="addProduct">
-      <h1>Add a new Task</h1>
-      <form>
-        <input type="text" id="title" placeholder="Title" required /> <br />
-        <br />
-        <input
-          type="text"
-          id="description"
-          placeholder="Description"
-          required
-        />
-        <br />
-        <br />
-        <select id="status">
-          <option value="">Status</option>
-          <option value="pending">pending</option>
-          <option value="in_progress">in_progress</option>
-          <option value="completed">completed</option>
-        </select>
-        <br />
-        <br />
-        <input onclick="addProd()" type="submit" value="Add to Database" />
-      </form>
+  <div style="display: none" id="addProduct">
+    <h1>Add a new Task</h1>
+    <form id="addForm">
+      <input type="text" id="title" placeholder="Title" required /> <br />
+      <br />
+      <input type="text" id="description" placeholder="Description" required />
+      <br />
+      <br />
+      <select id="status">
+        <option value="">Status</option>
+        <option value="pending">pending</option>
+        <option value="in_progress">in_progress</option>
+        <option value="completed">completed</option>
+      </select>
+      <br />
+      <br />
+      <input onclick="addProd()" class="formbtn" value="Add to Database" />
+    </form>
+  </div>
+
+  <div style="display: none" id="updateProduct" class="updateProduct">
+    <div>
+      <h1>Update the Entire Task</h1>
     </div>
+    <form id="updateForm">
+      <input type="text" id="allId" placeholder="Task id" required /> <br />
+      <br />
+      <input type="text" id="allTitle" placeholder="Title" required /> <br />
+      <br />
+      <input type="text" id="allDescription" placeholder="description" required />
+      <br />
+      <br />
+      <select id="allstatus">
+        <option value="">Status</option>
+        <option value="pending">pending</option>
+        <option value="in_progress">in_progress</option>
+        <option value="completed">completed</option>
+      </select>
+      <br />
+      <br />
 
-    <div style="display: none" id="updateProduct" class="updateProduct">
-      <div>
-        <h1>Update the Entire Task</h1>
-      </div>
-      <form>
-        <input type="text" id="allId" placeholder="Task id" required /> <br />
-        <br />
-        <input type="text" id="allTitle" placeholder="Title" required /> <br />
-        <br />
-        <input
-          type="text"
-          id="allDescription"
-          placeholder="description"
-          required
-        />
-        <br />
-        <br />
-        <select id="allstatus">
-          <option value="">Status</option>
-          <option value="pending">pending</option>
-          <option value="in_progress">in_progress</option>
-          <option value="completed">completed</option>
-        </select>
-        <br />
-        <br />
+      <input type="submit" value="Click to update" />
+    </form>
+  </div>
 
-        <input
-          onclick="updateAllProd()"
-          type="submit"
-          value="Click to update"
-        />
-      </form>
-    </div>
+  <div style="display: none" id="deleteProduct">
+    <form id="deleteForm">
+      <input type="text" id="id" class="id" placeholder="Task id" required />
+      <br />
+      <br />
+      <input type="submit" value="Delete" />
+    </form>
+  </div>
+</body>
 
-    <div style="display: none" id="deleteProduct">
-      <form>
-        <input type="text" id="id" class="id" placeholder="Task id" required />
-        <br />
-        <br />
-        <input onclick="deleteProd()" type="submit" value="Delete" />
-      </form>
-    </div>
-  </body>
 </html>
 <script src="./JS/tasks.js"></script>

@@ -103,7 +103,7 @@ nav {
   color: #de0a31;
 }
 
-#label > button {
+#label > a > button {
   border: none;
   background-color: #de0a31;
   color: white;

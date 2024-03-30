@@ -176,11 +176,13 @@ input[type="text"] {
   text-indent: 10px;
 }
 
-input[type="submit"] {
+input[type="submit"],.formbtn {
   background-color: #de0a31;
   border: none;
   color: white;
   font-size: medium;
+  text-align: center;
+  cursor: pointer;
 }
 
 /* update product */

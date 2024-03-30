@@ -109,6 +109,7 @@ let title = document.getElementById("title").value;
 let description = document.getElementById("description").value;
 let status = document.getElementById("status").value;
 
+
 // add new product
 const addProd = () => {
   const payload = {
@@ -128,10 +129,16 @@ const addProd = () => {
     .then((data) => {
       console.log("data=", data);
       alert("Task added successful!");
+      window.location.href = "tasks.html";
     })
     .catch((err) => console.log(err));
 };
 
+const updateform = document.querySelector("#updateForm");
+updateform.addEventListener("submit", function (event) {
+  event.preventDefault();
+  updateAllProd();
+});
 // update product
 const updateAllProd = () => {
   const inputID = document.querySelector("#allId").value;
@@ -140,39 +147,52 @@ const updateAllProd = () => {
     description: document.getElementById("allDescription").value,
     status: document.getElementById("allstatus").value,
   };
-  fetch(
-    `https://pleasant-pig-hospital-gown.cyclic.app/tasks/update/${inputID}`,
-    {
-      method: "PUT",
-      headers: {
-        "Content-type": "application/json",
-        Authorization: `${token}`,
-      },
-      body: JSON.stringify(payload),
-    }
-  )
-    .then((res) => res.json())
-    .then((res) => console.log(res))
-    .catch((err) => console.log(err));
+
+  fetch(`https://pleasant-pig-hospital-gown.cyclic.app/tasks/update/${inputID}`, {
+    method: "PUT",
+    headers: {
+      "Content-type": "application/json",
+      Authorization: `${token}`,
+    },
+    body: JSON.stringify(payload),
+  })
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error("Failed to update task. Server response not OK.");
+      }
+      return res.json();
+    })
+    .then((res) => {
+      console.log("Response from server:", res);
+      alert("Task updated successfully!");
+      window.location.href="tasks.html"
+    })
+    .catch((err) => {
+      console.error("Error updating task:", err);
+      alert("Failed to update task. Please try again later.");
+    });
 };
 
+
+const deleteform = document.querySelector("#deleteForm");
+deleteform.addEventListener("submit", function (event) {
+  event.preventDefault();
+  deleteProd();
+});
 // delete product
 const deleteProd = () => {
-  const inputID = document.querySelector(".id");
-
-  fetch(
-    `https://pleasant-pig-hospital-gown.cyclic.app/tasks/delete/${inputID.value}`,
-    {
-      method: "DELETE",
-      headers: {
-        Authorization: `${token}`,
-      },
-    }
-  )
+  const inputID = document.getElementById("id");
+  fetch(`https://pleasant-pig-hospital-gown.cyclic.app/tasks/delete/${inputID.value}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: `${token}`,
+    },
+  })
     .then((res) => res.json())
     .then((res) => {
       console.log(res);
       alert("Task is Deleted");
+      window.location.href = "tasks.html"
     })
     .catch((err) => console.log(err));
 };
