@@ -32,6 +32,7 @@
         <p id="dlt">Delete a Task</p>
       </div>
     </div>
+
     <div style="display: block" id="dashboard">
       <div id="info-products">
         <p>Total active Task -</p>
@@ -39,6 +40,7 @@
       </div>
       <div id="container"></div>
     </div>
+
     <div style="display: none" id="addProduct">
       <h1>Add a new Task</h1>
       <form>
@@ -69,13 +71,19 @@
         <h1>Update the Entire Task</h1>
       </div>
       <form>
-        <input type="text" id="allId" placeholder="Task id" /> <br />
+        <input type="text" id="allId" placeholder="Task id" required /> <br />
         <br />
-        <input type="text" id="allTitle" placeholder="Title" /> <br />
+        <input type="text" id="allTitle" placeholder="Title" required /> <br />
         <br />
-        <input type="text" id="allPrice" placeholder="description" /> <br />
+        <input
+          type="text"
+          id="allDescription"
+          placeholder="description"
+          required
+        />
         <br />
-        <select id="status">
+        <br />
+        <select id="allstatus">
           <option value="">Status</option>
           <option value="pending">pending</option>
           <option value="in_progress">in_progress</option>
@@ -94,7 +102,8 @@
 
     <div style="display: none" id="deleteProduct">
       <form>
-        <input type="text" id="id" class="id" placeholder="Task id" /> <br />
+        <input type="text" id="id" class="id" placeholder="Task id" required />
+        <br />
         <br />
         <input onclick="deleteProd()" type="submit" value="Delete" />
       </form>

@@ -1,3 +1,8 @@
+if (localStorage.getItem("userName") == null || "") {
+  alert("Please Login First");
+  window.location.href = "index.html";
+}
+
 let container = document.getElementById("container");
 let token = localStorage.getItem("token");
 
@@ -125,17 +130,12 @@ const addProd = () => {
 };
 
 // update product
-
 const updateAllProd = () => {
   const inputID = document.querySelector("#allId").value;
   const payload = {
-    main_image: document.getElementById("allImage").value,
     title: document.getElementById("allTitle").value,
-    price: document.getElementById("allPrice").value,
-    calories: document.getElementById("allCalories").value,
-    carbs: document.getElementById("allCarbs").value,
-    fat: document.getElementById("allFat").value,
-    protein: document.getElementById("allProtein").value,
+    description: document.getElementById("allDescription").value,
+    status: document.getElementById("allstatus").value,
   };
   fetch(`http://localhost:4000/tasks/update/${inputID}`, {
     method: "PUT",

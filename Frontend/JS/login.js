@@ -93,9 +93,9 @@ window.onload = () => {
 };
 
 // Logout functionality
-// const logoutButton = document.getElementById("logout-btn");
+const logoutButton = document.getElementById("logout-btn");
 
-// logoutButton.addEventListener("click", () => {
-//   localStorage.clear();
-//   showMessage("Logout successful!", "index.html");
-// });
+logoutButton.addEventListener("click", () => {
+  localStorage.clear();
+  showMessage("Logout successful!", "index.html");
+});
