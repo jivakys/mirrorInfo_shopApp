@@ -23,7 +23,7 @@ const onSignUp = () => {
     email: document.getElementById("email").value,
     password: document.getElementById("password").value,
   };
-  fetch("http://localhost:4000/users/register", {
+  fetch("https://pleasant-pig-hospital-gown.cyclic.app/users/register", {
     method: "POST",
     headers: { "Content-type": "application/json" },
     body: JSON.stringify(payload),

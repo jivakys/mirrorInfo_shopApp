@@ -44,7 +44,10 @@ xhr.onreadystatechange = function () {
     });
   }
 };
-xhr.open("GET", "http://localhost:4000/tasks/dashboard");
+xhr.open(
+  "GET",
+  "https://pleasant-pig-hospital-gown.cyclic.app/tasks/dashboard"
+);
 xhr.setRequestHeader("Authorization", `${token}`);
 xhr.send();
 
@@ -113,7 +116,7 @@ const addProd = () => {
     description: document.getElementById("description").value,
     status: document.getElementById("status").value,
   };
-  fetch("http://localhost:4000/tasks/addTask", {
+  fetch("https://pleasant-pig-hospital-gown.cyclic.app/tasks/addTask", {
     method: "POST",
     headers: {
       "Content-type": "application/json",
@@ -137,14 +140,17 @@ const updateAllProd = () => {
     description: document.getElementById("allDescription").value,
     status: document.getElementById("allstatus").value,
   };
-  fetch(`http://localhost:4000/tasks/update/${inputID}`, {
-    method: "PUT",
-    headers: {
-      "Content-type": "application/json",
-      Authorization: `${token}`,
-    },
-    body: JSON.stringify(payload),
-  })
+  fetch(
+    `https://pleasant-pig-hospital-gown.cyclic.app/tasks/update/${inputID}`,
+    {
+      method: "PUT",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `${token}`,
+      },
+      body: JSON.stringify(payload),
+    }
+  )
     .then((res) => res.json())
     .then((res) => console.log(res))
     .catch((err) => console.log(err));
@@ -154,12 +160,15 @@ const updateAllProd = () => {
 const deleteProd = () => {
   const inputID = document.querySelector(".id");
 
-  fetch(`http://localhost:4000/tasks/delete/${inputID.value}`, {
-    method: "DELETE",
-    headers: {
-      Authorization: `${token}`,
-    },
-  })
+  fetch(
+    `https://pleasant-pig-hospital-gown.cyclic.app/tasks/delete/${inputID.value}`,
+    {
+      method: "DELETE",
+      headers: {
+        Authorization: `${token}`,
+      },
+    }
+  )
     .then((res) => res.json())
     .then((res) => {
       console.log(res);
