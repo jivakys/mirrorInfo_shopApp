@@ -10,27 +10,36 @@ userRouter.post("/register", async (req, res) => {
   try {
     let user = await User.findOne({ email });
     if (user) {
-      res.status(400).send({ error: "User already registered in Database" });
-    } else {
-      bcrypt.hash(password, +process.env.SALT, async function (err, hash) {
-        if (err) {
-          res
-            .status(401)
-            .send({ message: "Server Error happens", error: err.message });
-          console.log(err);
-        } else {
-          let newUser = new User({
-            name,
-            email,
-            password: hash,
-          });
-          await newUser.save();
-          res.status(200).send({ message: "User Registered now", newUser });
-        }
-      });
+      return res
+        .status(400)
+        .send({ error: "User already registered in Database" });
     }
+
+    bcrypt.hash(password, +process.env.SALT, async function (err, hash) {
+      if (err) {
+        console.error("Error hashing password:", err);
+        return res.status(500).send({ error: "Server error occurred" });
+      }
+
+      let newUser = new User({
+        name,
+        email,
+        password: hash,
+      });
+
+      try {
+        await newUser.save();
+        res
+          .status(200)
+          .send({ message: "User registered successfully", newUser });
+      } catch (saveError) {
+        console.error("Error saving user:", saveError);
+        res.status(500).send({ error: "Error saving user to database" });
+      }
+    });
   } catch (error) {
-    res.status(400).send({ error: error.message });
+    console.error("Error in registration route:", error);
+    res.status(400).send({ error: "Error processing registration request" });
   }
 });
 
@@ -38,7 +47,6 @@ userRouter.post("/login", async (req, res) => {
   let { email, password } = req.body;
   try {
     let user = await User.findOne({ email });
-    console.log("user==", user);
     if (!user) {
       res
         .status(400)

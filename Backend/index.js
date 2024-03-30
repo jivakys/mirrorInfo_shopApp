@@ -2,13 +2,19 @@ const express = require("express");
 const { connection } = require("./Configs/db");
 const { userRouter } = require("./Routes/userRoute");
 const { taskRouter } = require("./Routes/taskRoute");
+const cors = require("cors");
 const app = express();
 require("dotenv").config();
 
 app.use(express.json());
+app.use(cors());
 
 app.get("/", (req, res) => {
-  res.send({ message: "Mirror Infotech Shopping portal Activated" });
+  try {
+    res.send({ message: "Mirror Infotech Shopping portal Activated" });
+  } catch (error) {
+    res.send({ message: "Something went wrong, Check server" });
+  }
 });
 
 app.use("/users", userRouter);
