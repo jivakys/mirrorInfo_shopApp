@@ -5,26 +5,58 @@ MirrorInfo_shopApp project is a RESTful API built using Node.js and Express for 
 ## Table of Contents
 
 -  [Getting Started](#getting-started)
-   -  [Prerequisites](#prerequisites)
    -  [Installation](#installation)
    -  [Configuration](#configuration)
--  [Usage](#usage)
--  [Presentation](#presentation)
--  [Cointab server](#eksaq-server)
--  [Contributing](#contributing)
+-  [Endpoint](#endpoint)
+   -  [User Router](#userRouter)
+   -  [Task Router](#taskRouter)
 -  [License](#license)
 
-## Endpoints :
+
+### Installation
+
+Follow these steps to install and run the project:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/jivakys/mirrorInfo_shopApp.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd mirrorInfo_shopApp
+   ```
+
+3. Set up your environment variables by creating a `.env` file in the root directory. Example content:
+
+   ```env
+   MONGODB_URL=your server url
+   ```
+
+4. Start your application:
+
+   ```bash
+   npm run start
+   ```
+
+5. Open the app in your browser at http://localhost:4000.
+
+### Configuration
+
+Before running the application, make sure to configure the necessary environment variables in the `.env` file.
+
+### Endpoints :
 
 ### 1.User Router (`userRouter`)
 
 1. Signup
 
-<aside>
-💡 URL: `/users/register`
+``` 
+URL: `/users/register`
 Method: `POST`
-
-</aside>
+```
 
 - Adds a new user to the database.
 - Allows users registration with name, email, and password.
