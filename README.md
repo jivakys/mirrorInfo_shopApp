@@ -2,26 +2,38 @@
 
 MirrorInfo_shopApp project is a RESTful API built using Node.js and Express for managing tasks. It allows users to perform basic CRUD operations on tasks with attributes such as title, description, status, and timestamps. The API is designed to facilitate task management functionalities with MongoDB storage, and validation/error handling.
 
-## **Endpoints :**
+## Table of Contents
 
-### **1.User Router (`userRouter`)**
+-  [Getting Started](#getting-started)
+   -  [Prerequisites](#prerequisites)
+   -  [Installation](#installation)
+   -  [Configuration](#configuration)
+-  [Usage](#usage)
+-  [Presentation](#presentation)
+-  [Cointab server](#eksaq-server)
+-  [Contributing](#contributing)
+-  [License](#license)
 
-1. **Signup**
+## Endpoints :
+
+### 1.User Router (`userRouter`)
+
+1. Signup
 
 <aside>
-💡 **URL: `/users/register`
-Method: `POST`**
+💡 URL: `/users/register`
+Method: `POST`
 
 </aside>
 
 - Adds a new user to the database.
 - Allows users registration with name, email, and password.
 
-1. **Login**
+2. Login
 
 <aside>
-💡 **URL: `/users/login`
-Method: `POST`**
+💡 URL: `/users/login`
+Method: `POST`
 
 </aside>
 
