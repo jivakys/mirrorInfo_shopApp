@@ -10,6 +10,9 @@ const taskSchema = new mongoose.Schema({
   },
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now },
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }
+}, {
+  versionKey:false
 });
 
 const TaskModel = mongoose.model("product", taskSchema);
