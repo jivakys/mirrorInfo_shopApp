@@ -157,4 +157,39 @@ Method: DELETE
 <img src="https://user-images.githubusercontent.com/13700/35731649-652807e8-080e-11e8-88fd-1b2f6d553b2d.png" alt="nodemon.png" width="50" height="50"/>
 </p>
 
-
+    mirrorInfo_shopApp
+    |
+    |----- Backend/
+    |         |----- Config/
+    |         |         |----- db.js
+    |         |----- Middlewares/
+    |         |         |----- authenticate.js
+    |         |----- Models/
+    |         |         |----- taskModel.js
+    |         |         |----- userModel.js
+    |         |----- Routes/
+    |         |         |----- taskRoute.js
+    |         |         |----- userRoute.js   
+    |         |----- .gitignore
+    |         |----- .env
+    |         |----- index.js
+    |         |----- pakage-lock.json
+    |         |----- package.json
+    |  
+    |----- Frontend/
+    |         |         |----- index.html
+    |         |         |----- login.html
+    |         |         |----- signup.html
+    |         |         |----- tasks.html
+    |         |----- CSS/
+    |         |         |----- index.css
+    |         |         |----- login.css
+    |         |         |----- signup.css
+    |         |         |----- tasks.css
+    |         |----- IMAGES/
+    |         |----- JS/
+    |         |         |----- index.js
+    |         |         |----- login.js
+    |         |         |----- signup.js
+    |         |         |----- tasks.js
+    |----- README.md/
