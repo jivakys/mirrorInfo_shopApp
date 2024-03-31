@@ -1,17 +1,22 @@
-## Description :
+<h1> MirrorInfo_shopApp </h1>
+
+| `DESCRIPTION ` |
+| :------------: |
 
 MirrorInfo_shopApp project is a RESTful API built using Node.js and Express for managing tasks. It allows users to perform basic CRUD operations on tasks with attributes such as title, description, status, and timestamps. The API is designed to facilitate task management functionalities with MongoDB storage, and validation/error handling.
 
 ## Table of Contents
 
--  [Getting Started](#getting-started)
+-  [Getting Started](#Description)
    -  [Installation](#installation)
    -  [Configuration](#configuration)
--  [Endpoint](#endpoint)
-   -  [User Router](#userRouter)
-   -  [Task Router](#taskRouter)
--  [TECH STACKS](#teckstacks)
--  [NPM Packages](#npm)
+-  [Demo](#demo)
+-  [Endpoints](#endpoint)
+   -  [User Router](#user-router)
+   -  [Task Router](#task-router)
+-  [TECH STACKS](#teck-stacks)
+-  [NPM Packages](#npm-packages)
+   
 
 
 ### Installation
@@ -48,9 +53,18 @@ Follow these steps to install and run the project:
 
 Before running the application, make sure to configure the necessary environment variables in the `.env` file.
 
-## Endpoints :
 
-### 1.User Router (`userRouter`)
+| `Demo` |
+| :----: |
+
+[FRONTEND - VERCEL LINK](https://mirrorinfoshopapp.vercel.app/)
+
+[BACKEND - CYCLIC LINK](https://pleasant-pig-hospital-gown.cyclic.app/)
+
+| `Endpoints` |
+| :---------: |
+
+## 1.User Router (`userRouter`)
 
 1. Signup
 
@@ -69,7 +83,7 @@ Method: POST
 ```
 - Allows user login with email and password, generates a JWT token for authentication.
 
-### 2.Task Router (`taskRouter`)
+## 2.Task Router (`taskRouter`)
 
 1. Fetch All Tasks
 
@@ -106,7 +120,8 @@ Method: DELETE
 ```
 - Deletes the task with the specified ID from the database.
 
-## TECH STACKS USED
+| `TECHSTACKS USED` |
+| :---------------: |
 
 <p align = "center">
 <img src="https://github.com/PrinceCorwin/Useful-tech-icons/blob/main/images/HTML.png" alt="html" width="55" height="55"/>
@@ -116,11 +131,11 @@ Method: DELETE
 <img src="https://res.cloudinary.com/kc-cloud/images/f_auto,q_auto/v1651772163/expressjslogo/expressjslogo.webp?_i=AA" alt="express" width="50" height="50"/>
 <img src="https://raw.githubusercontent.com/PrinceCorwin/Useful-tech-icons/main/images/mongodb-leaf.png" alt="mongo" width="50" height="50"/> 
 <img src="https://user-images.githubusercontent.com/25181517/121401671-49102800-c959-11eb-9f6f-74d49a5e1774.png" alt="npm" width="50" height="50"/>
-<img src="https://github.com/jivakys/truculent-face-1803/assets/112770989/5d6e8202-0e5c-4008-b7da-97bce7d165cf" alt="redis" width="50" height="50"/>
 </p>
 <hr>
 
-## NPM Packages
+| `NPM PACKAGES` |
+| :------------: |
 
 <p align = "center">
 <img src="https://repository-images.githubusercontent.com/139898859/9617c480-81c2-11ea-94fc-322231ead1f0" alt="bcrypt.png" width="70" height="50"/>
@@ -132,9 +147,3 @@ Method: DELETE
 </p>
 
 
-| `Demo` |
-| :----: |
-
-[FRONTEND - VERCEL LINK](https://fitnesshub-ivory.vercel.app/)
-
-[BACKEND - CYCLIC LINK](https://jittery-clam-underclothes.cyclic.app/)
