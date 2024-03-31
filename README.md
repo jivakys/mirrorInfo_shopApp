@@ -61,7 +61,7 @@ Before running the application, make sure to configure the necessary environment
 
 [FRONTEND - VERCEL LINK](https://mirrorinfoshopapp.vercel.app/)
 
-[BACKEND - CYCLIC LINK](https://pleasant-pig-hospital-gown.cyclic.app/)
+[BACKEND - CYCLIC LINK](https://cute-teal-cape-buffalo-toga.cyclic.app/)
 
 | `Endpoints` |
 | :---------: |
