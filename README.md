@@ -17,6 +17,7 @@ MirrorInfo_shopApp project is a RESTful API built using Node.js and Express for 
 -  [Features](#features)
 -  [TECH STACKS](#teck-stacks)
 -  [NPM Packages](#npm-packages)
+-  [File Structure](#file-structure)
    
 
 
@@ -157,6 +158,9 @@ Method: DELETE
 <img src="https://user-images.githubusercontent.com/13700/35731649-652807e8-080e-11e8-88fd-1b2f6d553b2d.png" alt="nodemon.png" width="50" height="50"/>
 </p>
 
+
+| `File Structure` |
+| :--------------: |
     mirrorInfo_shopApp
     |
     |----- Backend/
