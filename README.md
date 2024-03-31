@@ -14,6 +14,7 @@ MirrorInfo_shopApp project is a RESTful API built using Node.js and Express for 
 -  [Endpoints](#endpoint)
    -  [User Router](#user-router)
    -  [Task Router](#task-router)
+-  [Features](#features)
 -  [TECH STACKS](#teck-stacks)
 -  [NPM Packages](#npm-packages)
    
@@ -111,6 +112,7 @@ URL: /update/:id
 Method: PUT
 ```
 - Updates an existing task with the specified ID using the provided details.
+- Returns a success message upon successful Update.
 
 4. Delete Task
 
@@ -119,6 +121,15 @@ URL: /delete/:id
 Method: DELETE
 ```
 - Deletes the task with the specified ID from the database.
+- Returns a success message upon successful Delete.
+
+| `FEATURES` |
+| :--------: |
+- Authentication: The project includes JWT-based authentication to secure user data.
+- Hashing: User passwords are securely hashed to protect against unauthorized access.
+- dotenv: The project uses dotenv to manage environment variables and sensitive configuration data.
+- Relationship: The project includes database schema relationships between collections to support complex data structures.
+- Aggregation: The project uses MongoDB's aggregation framework to perform advanced queries and data manipulations.
 
 | `TECHSTACKS USED` |
 | :---------------: |
