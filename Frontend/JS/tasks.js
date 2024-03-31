@@ -46,7 +46,7 @@ xhr.onreadystatechange = function () {
 };
 xhr.open(
   "GET",
-  "https://pleasant-pig-hospital-gown.cyclic.app/tasks/dashboard"
+  "https://cute-teal-cape-buffalo-toga.cyclic.app/tasks/dashboard"
 );
 xhr.setRequestHeader("Authorization", `${token}`);
 xhr.send();
@@ -117,7 +117,7 @@ const addProd = () => {
     description: document.getElementById("description").value,
     status: document.getElementById("status").value,
   };
-  fetch("https://pleasant-pig-hospital-gown.cyclic.app/tasks/addTask", {
+  fetch("https://cute-teal-cape-buffalo-toga.cyclic.app/tasks/addTask", {
     method: "POST",
     headers: {
       "Content-type": "application/json",
@@ -148,7 +148,7 @@ const updateAllProd = () => {
     status: document.getElementById("allstatus").value,
   };
 
-  fetch(`https://pleasant-pig-hospital-gown.cyclic.app/tasks/update/${inputID}`, {
+  fetch(`https://cute-teal-cape-buffalo-toga.cyclic.app/tasks/update/${inputID}`, {
     method: "PUT",
     headers: {
       "Content-type": "application/json",
@@ -182,7 +182,7 @@ deleteform.addEventListener("submit", function (event) {
 // delete product
 const deleteProd = () => {
   const inputID = document.getElementById("id");
-  fetch(`https://pleasant-pig-hospital-gown.cyclic.app/tasks/delete/${inputID.value}`, {
+  fetch(`https://cute-teal-cape-buffalo-toga.cyclic.app/tasks/delete/${inputID.value}`, {
     method: "DELETE",
     headers: {
       Authorization: `${token}`,

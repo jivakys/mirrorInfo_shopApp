@@ -23,7 +23,7 @@ const onSignUp = () => {
     email: document.getElementById("email").value,
     password: document.getElementById("password").value,
   };
-  fetch("https://pleasant-pig-hospital-gown.cyclic.app/users/register", {
+  fetch("https://cute-teal-cape-buffalo-toga.cyclic.app/users/register", {
     method: "POST",
     headers: { "Content-type": "application/json" },
     body: JSON.stringify(payload),
